@@ -1,0 +1,59 @@
+_______________________________________________________________________________________________________
+
+Q.1 -----<!DOCTYPE html> is not a tag in HTML. It is called a document type declaration or doctype declaration. It is used to specify the version of HTML or XHTML that the document is written in. The declaration informs the web browser about the type of markup language used in the document, allowing it to render the content correctly. In HTML5, <!DOCTYPE html> is the recommended declaration and should be placed at the beginning of the HTML document.
+
+_______________________________________________________________________________________________________
+
+Q.2------- Semantic tags in HTML are elements that provide meaning and structure to the content within a web page. They describe the type or purpose of the content rather than just its presentation. Some examples of semantic tags in HTML5 include <header>, <nav>, <article>, <section>, <aside>, <footer>, <main>, etc.
+
+Semantic tags are important because they enhance the accessibility, maintainability, and search engine optimization (SEO) of a website. They make it easier for search engines to understand the structure and context of the content, which can improve the website's ranking in search results. Semantic tags also help assistive technologies, such as screen readers, to provide a better experience for users with disabilities. Additionally, semantic markup improves the overall structure of a web page, making it more readable and maintainable for developers.
+_______________________________________________________________________________________________________
+Q.3------- HTML tags and elements are closely related but have distinct meanings:
+
+HTML tags: Tags are the building blocks of HTML. They define the structure and presentation of elements within an HTML document. Tags are enclosed within angle brackets (<>) and usually come in pairs, with an opening tag and a closing tag. For example, <p> is an opening tag, and </p> is a closing tag for a paragraph element.
+
+HTML elements: Elements consist of one or more tags, along with the content they enclose. An element may include both an opening tag and a closing tag, such as <p>...</p>, or it can be a self-closing tag, such as <img> for an image. Elements can contain other elements, forming a hierarchical structure within an HTML document.
+
+In summary, tags are the individual markup components, while elements are the combination of tags and the content they enclose.
+_______________________________________________________________________________________________________
+
+Q6.------ HTML5 brought several advantages over its previous versions. Some of the key advantages include:
+
+Improved Multimedia Support: HTML5 introduced native support for multimedia elements such as <video> and <audio>, eliminating the need for third-party plugins like Adobe Flash. This made it easier to embed multimedia content into web pages, improving compatibility and performance.
+
+Canvas Element: HTML5 introduced the <canvas> element, which provides a powerful drawing API. It allows developers to create dynamic, interactive graphics and animations directly in the browser, without relying on external plugins.
+
+Better Semantics: HTML5 introduced new semantic elements like <header>, <footer>, <nav>, and <article>, which provide a clearer structure to web documents. These elements make it easier for search engines and assistive technologies to understand and navigate the content, improving accessibility and SEO.
+
+Offline Capabilities: HTML5 introduced the Application Cache (manifest attribute) and the Local Storage API, allowing web applications to work offline and store data locally. This enables users to continue using web apps even when they're not connected to the internet, enhancing the user experience.
+
+Geolocation Support: HTML5 added a Geolocation API, enabling web applications to retrieve the user's geographic location. This feature has various applications, such as location-based services, mapping, and targeted content delivery.
+
+Enhanced Forms: HTML5 introduced new form elements and attributes, such as <input type="date">, <input type="email">, <input type="number">, and <input type="range">, making it easier to handle user input and provide better user experiences without relying on JavaScript or external plugins.
+_______________________________________________________________________________________________________
+
+Q.8 The `<figure>` tag and the `<img>` tag serve different purposes in HTML.
+The <figure> tag is used to group together a self-contained content, such as an image, illustration, diagram, or video, along with its caption or description. It provides a semantic container to associate the caption with the content. The <figure> tag can also be used to mark up other types of content, like code snippets or audio clips.
+
+On the other hand, the <img> tag is specifically used for embedding images in an HTML document. It is a self-closing tag that requires a src attribute to specify the source file of the image. It does not include any built-in support for captions or descriptions.
+
+In summary, while the <figure> tag is used for grouping self-contained content with a caption, the <img> tag is solely used for embedding images.
+
+_______________________________________________________________________________________________________
+
+Q.9 In HTML, the difference between a tag and an attribute is as follows:
+
+A tag represents an HTML element and defines its structure and purpose. For example, <p>, <div>, <h1>, etc., are tags that define paragraphs, divisions, headings, respectively. Tags are enclosed within angle brackets < >.
+
+An attribute provides additional information or modifies the behavior of an HTML element. It is added within the opening tag of an element. Attributes consist of a name-value pair separated by an equals sign =. The attribute name indicates the specific characteristic or property, while the attribute value provides the corresponding value for that characteristic.
+
+Here are some examples of global attributes in HTML that can be used with various tags:
+
+class: Specifies one or more CSS classes to style an element.
+id: Specifies a unique identifier for an element.
+style: Defines inline CSS styles for an element.
+title: Provides a title or tooltip text for an element.
+lang: Specifies the language of the content within an element.
+data-*: Allows custom data attributes to be added to an element.
+These are just a few examples of global attributes. Different tags may support additional specific attributes based on their purpose and functionality.
+_______________________________________________________________________________________________________
