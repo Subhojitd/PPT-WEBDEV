@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background-color: #aeabab;
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top:80px ;
+}
+section{
+    background-color: rgb(33, 32, 32);
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+}
+table,th,td{
+    padding: 5px;
+    border-collapse: collapse;
+}
+table{
+    border: 1px solid white;
+}
+tr{
+    border: 1px solid white;
+}
+
+
+@media (max-width: 800px){
+    td:not(:first-of-type){
+        min-width: 12.1rem;
+    }
+    .hide{
+        display: none;
+    }
+}
