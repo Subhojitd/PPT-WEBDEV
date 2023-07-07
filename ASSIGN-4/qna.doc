@@ -1,0 +1,234 @@
+______________________________________________________________________________________________________________________
+
+💡Q.1 Explain Hoisting in JavaScript:
+
+Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their respective scopes during the compilation phase before the code is executed. This means that regardless of where variables and functions are declared in the code, they are treated as if they were declared at the top of their containing scope.
+
+However, it's important to note that only the declarations are hoisted, not the initializations or assignments. In the case of variables declared with var, they are initialized with the value undefined during hoisting.
+
+For example:
+console.log(myVariable); // Output: undefined
+var myVariable = 10;
+
+In the above code, even though the variable myVariable is accessed before it is explicitly declared and assigned, it doesn't throw an error. This is because during hoisting, the declaration of myVariable is moved to the top, and since it is not yet assigned a value, it is undefined at the point of access.
+
+It's important to understand hoisting in JavaScript to avoid potential issues and bugs. It is recommended to declare variables at the beginning of their scope to make the code more readable and understandable.
+
+______________________________________________________________________________________________________________________
+
+
+💡 Q.2 Explain Temporal Dead Zone:
+
+The Temporal Dead Zone (TDZ) is a behavior in JavaScript that occurs when using let and const declarations. It is a specific time span in which variables declared with let and const exist but cannot be accessed.
+
+The TDZ starts when the execution enters a block scope (such as a function, an if statement, or a loop) and continues until the declaration statement is encountered. During this period, any attempt to access the variable will result in a ReferenceError.
+
+For example:
+
+console.log(myVariable); // Throws ReferenceError: myVariable is not defined
+let myVariable = 10;
+
+In the above code, the console.log statement throws a ReferenceError because the variable myVariable is accessed within its TDZ. The TDZ ends when the variable declaration let myVariable = 10; is encountered.
+
+Temporal Dead Zone helps to catch potential errors caused by accessing variables before they are declared. It encourages better coding practices and prevents accidental usage of variables before they have valid values.
+______________________________________________________________________________________________________________________
+
+💡 Q.3 Difference between var and let:
+
+The main difference between var and let is how they handle variable scoping and hoisting.
+
+Scoping: Variables declared with var have function-level scope or global scope, while variables declared with let have block-level scope. Block-level scope means that the variable is only accessible within the nearest set of curly braces {} where it is declared.
+
+Hoisting: Variables declared with var are hoisted to the top of their function scope or global scope, allowing them to be accessed before they are declared. On the other hand, variables declared with let are also hoisted but remain in the Temporal Dead Zone (TDZ) until their declaration statement is encountered.
+
+Redeclaration: Variables declared with var can be redeclared within the same scope without throwing an error. In contrast, variables declared with let cannot be redeclared in the same scope, and attempting to do so will result in a SyntaxError.
+
+Global scope behavior: Variables declared with var in the global scope become properties of the global object (e.g., window object in browsers). Variables declared with let in the global scope do not become properties of the global object.
+
+Overall, using let is generally considered a better practice than var because it provides block scoping and helps prevent common issues associated with hoisting and variable redeclaration.
+
+______________________________________________________________________________________________________________________
+
+💡 Q.4 Major features introduced in ECMAScript 6:
+
+ECMAScript 6, also known as ES6 or ECMAScript 2015, introduced several significant features and enhancements to the JavaScript language. Some of the major features introduced in ES6 are:
+
+let and const declarations: The let and const keywords were introduced to provide block scoping and improve variable declaration semantics.
+
+Arrow functions: Arrow functions provide a concise syntax for writing anonymous functions and have lexical this binding.
+
+Classes: ES6 introduced the class syntax to provide a more straightforward and concise way to define classes and create object-oriented code.
+
+Template literals: Template literals allow embedding expressions and multiline strings using backticks (`).
+
+Destructuring assignment: Destructuring assignment provides a convenient way to extract values from arrays or objects into individual variables.
+
+Default function parameters: ES6 allows setting default values for function parameters, reducing the need for manual checks.
+
+Rest parameters and spread operator: Rest parameters (...args) allow capturing multiple function arguments into an array. The spread operator (...) can expand arrays into individual elements or combine multiple arrays.
+
+Modules: ES6 introduced a standardized module syntax, enabling developers to split their code into reusable modules.
+
+Promises: Promises provide a more flexible and readable way to handle asynchronous operations and avoid callback hell.
+
+for...of loop: The for...of loop was introduced to iterate over iterable objects, such as arrays and strings, simplifying the iteration syntax.
+
+These are just a few highlights of the features introduced in ES6. ECMAScript 6 brought significant improvements to the JavaScript language, enhancing its expressiveness, readability, and developer productivity.
+
+______________________________________________________________________________________________________________________
+
+💡 Q.5 Difference between let and const:
+
+The main difference between let and const lies in their reassignment behavior.
+
+Reassignment: Variables declared with let can be reassigned to new values, whereas variables declared with const are read-only and cannot be reassigned once they are assigned a value. However, it's important to note that for objects and arrays assigned to const, the properties or elements can still be modified.
+
+Block scoping: Both let and const have block-level scoping, which means they are only accessible within the nearest set of curly braces {} where they are declared.
+
+Hoisting: Similar to let, variables declared with const are also hoisted but remain in the Temporal Dead Zone (TDZ) until their declaration statement is encountered.
+
+Initialization: Variables declared with let and const are not hoisted with an initial value. They are in the "uninitialized" state until a value is explicitly assigned.
+
+Choosing between let and const depends on whether you need a variable that can be reassigned or if you want to enforce immutability. If you know that the variable's value should not be changed, using const helps communicate that intent and prevents accidental reassignments. On the other hand, if you expect the variable to be reassigned, or if you need it to have a different value in different scopes, let is the appropriate choice.
+
+______________________________________________________________________________________________________________________
+
+💡 Q.6 What are template literals in ES6 and how do you use them?
+
+Template literals, introduced in ES6, provide an enhanced way to work with strings in JavaScript. They are enclosed by backticks (`) instead of single or double quotes.
+
+Template literals havetwo main features:
+
+1.String interpolation: Template literals allow embedding expressions inside the string using ${expression}. The expression inside ${} is evaluated and the result is inserted into the string. This eliminates the need for concatenation or using string formatting methods.
+
+Example:
+
+const name = 'Alice';
+const age = 25;
+
+console.log(`My name is ${name} and I am ${age} years old.`);
+// Output: My name is Alice and I am 25 years old.
+
+2.
+Multiline strings: Template literals can span multiple lines without the need for escape characters or concatenation. This makes it easier to write and read multiline strings.
+
+Example:
+const message = `
+This is a multiline string.
+It can span multiple lines without using escape characters.
+`;
+
+console.log(message);
+/* Output:
+This is a multiline string.
+It can span multiple lines without using escape characters.
+*/
+
+______________________________________________________________________________________________________________________
+
+💡 Q.7 What's the difference between map and forEach?
+
+Both map and forEach are Array methods in JavaScript used for iterating over an array and performing operations on its elements. However, there are some key differences between them:
+
+Return value: The map method returns a new array with the results of applying a provided function to each element of the original array. It creates a new array by mapping each element to the result of the function. On the other hand, the forEach method does not return anything; it simply iterates over the array and executes a provided function on each element.
+
+Example using map:
+
+const numbers = [1, 2, 3, 4, 5];
+const squaredNumbers = numbers.map(num => num * num);
+console.log(squaredNumbers); // Output: [1, 4, 9, 16, 25]
+
+Example using forEach:
+
+const numbers = [1, 2, 3, 4, 5];
+numbers.forEach(num => console.log(num));
+// Output:
+// 1
+// 2
+// 3
+// 4
+// 5
+
+Mutability: The map method creates a new array without modifying the original array, while the forEach method directly modifies the original array. In other words, map is non-destructive, whereas forEach is destructive.
+
+Chaining: Since map returns a new array, it can be easily chained with other array methods like filter, reduce, or sort. forEach, being void of return value, cannot be directly chained with other array methods.
+
+In summary, the main differences between map and forEach are their return values, mutability of the original array, and the ability to chain other array methods. If you need to transform the elements of an array into a new array, map is a better choice. If you simply want to iterate over the array and perform some operation on each element, forEach is suitable.
+
+______________________________________________________________________________________________________________________
+
+ Q.8 How can you destructure objects and arrays in ES6?
+
+Destructuring is a feature introduced in ES6 that allows you to extract values from objects or arrays and assign them to variables in a more concise and convenient way. It provides a shorthand syntax to unpack values.
+
+Destructuring Objects:
+To destructure an object, you can use the object's properties as variable names enclosed in curly braces {}.
+
+const person = {
+  name: 'Alice',
+  age: 25,
+  city: 'New York'
+};
+
+// Destructuring the object
+const { name, age, city } = person;
+
+console.log(name); // Output: Alice
+console.log(age); // Output: 25
+console.log(city); // Output: New York
+
+Destructuring Arrays:
+To destructure an array, you can use square brackets [] on the left side of the assignment.
+
+const numbers = [1, 2, 3, 4, 5];
+
+// Destructuring the array
+const [first, second, ...rest] = numbers;
+
+console.log(first); // Output: 1
+console.log(second); // Output: 2
+console.log(rest); // Output: [3, 4, 5]
+______________________________________________________________________________________________________________________
+
+💡 Q.9 How can you define default parameter values in ES6 functions?
+
+In ES6, you can define default parameter values for function arguments, which are used when the corresponding arguments are not provided or are explicitly set as undefined. Default parameter values provide a convenient way to handle missing or optional arguments.
+
+Here's how you can define default parameter values in ES6 functions:
+
+function greet(name = 'Anonymous', age = 0) {
+  console.log(`Hello ${name}! You are ${age} years old.`);
+}
+
+greet(); // Output: Hello Anonymous! You are 0 years old.
+greet('Alice', 25); // Output: Hello Alice! You are 25 years old.
+
+In the above example, the greet function has two parameters, name and age, with default values assigned. If no arguments are provided when calling the function, the default values 'Anonymous' and 0 will be used.
+
+It's important to note that default parameter values are only applied when the corresponding arguments are undefined. Any other falsy values, such as null or an empty string, will not trigger the default values.
+
+______________________________________________________________________________________________________________________
+
+Q.10** What is the purpose of the spread operator (**`...`**) in ES6?
+
+In ES6, the spread operator (...) is a powerful feature that allows an iterable (like an array or a string) to be expanded into individual elements. It is used in several contexts and serves various purposes:
+
+Array/Object Destructuring: The spread operator can be used to unpack elements from an array or properties from an object into individual variables.
+
+const numbers = [1, 2, 3, 4, 5];
+const [first, ...rest] = numbers;
+
+console.log(first); // Output: 1
+console.log(rest); // Output: [2, 3, 4, 5]
+
+Function Arguments: The spread operator can be used to pass multiple arguments to a function, where the arguments are provided as an array or iterable.
+
+function sum(a, b, c) {
+  return a + b + c;
+}
+
+const numbers = [1, 2, 3];
+const result = sum(...numbers);
+
+console.log(result); // Output: 6
+______________________________________________________________________________________________________________________
