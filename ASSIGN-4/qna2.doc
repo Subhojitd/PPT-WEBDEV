@@ -1,0 +1,186 @@
+_______________________________________________________________________________________________________________________
+
+💡 A.1 Synchronous and Asynchronous are two different ways of handling tasks or operations in programming.
+
+Synchronous operations are executed in a sequential manner. In other words, each operation waits for the previous operation to complete before executing. The program execution is blocked until the current operation finishes. This means that if there is a long-running task, the program will be unresponsive until that task is completed.
+
+On the other hand, asynchronous operations allow the program to continue executing other tasks without waiting for the completion of a particular operation. Instead of blocking the program, asynchronous operations are usually scheduled to run in the background, and the program continues its execution without waiting for the result. Once the asynchronous operation is complete, a callback function or a promise is used to handle the result.
+
+In summary, synchronous operations are executed one after another, blocking the program until each operation completes, while asynchronous operations allow the program to continue running without waiting for the completion of a particular task.
+_______________________________________________________________________________________________________________________
+
+💡 A.2 Web APIs (Application Programming Interfaces) are interfaces provided by web browsers to interact with various web-related functionalities. They expose a set of methods, objects, and properties that developers can use to access and manipulate different aspects of web browsers and web content.
+
+Web APIs provide a way for developers to interact with web features such as manipulating the DOM (Document Object Model), making HTTP requests, handling audio and video, accessing geolocation data, working with local storage, and much more. Some commonly used web APIs include the Fetch API for making HTTP requests, the Geolocation API for retrieving location information, the Web Storage API for local storage, and the Canvas API for drawing graphics.
+
+These APIs enable developers to build interactive and dynamic web applications by leveraging the capabilities of web browsers. They are typically accessed through JavaScript code, allowing developers to interact with web content and extend the functionality of web applications.
+
+_______________________________________________________________________________________________________________________
+
+💡 A.3 setTimeout and setInterval are functions in JavaScript that allow you to schedule the execution of code after a certain delay or at regular intervals.
+
+setTimeout is used to execute a function or a piece of code after a specified delay (in milliseconds). The basic syntax of setTimeout is as follows:
+
+setTimeout(function, delay);
+
+Here, function represents the code that you want to execute, and delay is the time (in milliseconds) that you want to wait before executing the code.
+
+For example, the following code will display the message "Hello, world!" after a delay of 2000 milliseconds (2 seconds):
+
+setTimeout(function() {
+  console.log("Hello, world!");
+}, 2000);
+
+_______________________________________________________________________________________________________________________
+
+A.4 To handle asynchronous code in JavaScript, you can use callbacks, promises, or async/await.
+
+Callbacks: A callback is a function that is passed as an argument to another function and gets executed when a specific task completes. It allows you to define what should happen after an asynchronous operation completes. However, using callbacks can lead to callback hell, which can make the code harder to read and maintain.
+
+Promises: Promises provide a more structured way of handling asynchronous operations. A promise represents the eventual completion (or failure) of an asynchronous operation and allows you to chain multiple asynchronous operations together. Promises have three states: pending, fulfilled, or rejected. You can attach .then() and .catch() methods to a promise to handle the success and failure cases, respectively.
+
+Async/await: Async/await is a syntax introduced in ES2017 (ES8) that allows you to write asynchronous code in a more synchronous manner. It builds upon promises and provides a more readable and intuitive way to handle asynchronous operations. The async keyword is used to define an asynchronous function, and the await keyword is used to pause the execution of the function until a promise is fulfilled or rejected.
+
+_______________________________________________________________________________________________________________________
+
+ A.5 Callbacks are functions that are passed as arguments to other functions and are executed after a particular task or event completes. They are commonly used in asynchronous programming to handle the result of an asynchronous operation.
+
+Callback Hell refers to the situation where multiple asynchronous operations are nested within each other, resulting in code that becomes difficult to read and maintain. This happens when you have callbacks within callbacks, making the code indentation deeper and leading to what is often referred to as the "pyramid of doom" or "callback pyramid."
+
+Here's an example of callback hell:
+
+asyncOperation1(function(result1) {
+  asyncOperation2(result1, function(result2) {
+    asyncOperation3(result2, function(result3) {
+      // More nested callbacks...
+    });
+  });
+});
+
+As you can see, the code becomes increasingly complex and harder to follow as more asynchronous operations are added. This is where promises or async/await can be used as alternatives to handle asynchronous code in a more organized and readable way.
+
+_______________________________________________________________________________________________________________________
+
+💡 A.6 Promises are objects in JavaScript that represent the eventual completion (or failure) of an asynchronous operation. They are a way to deal with asynchronous code in a more structured manner and avoid callback hell.
+
+Promises have three states:
+
+Pending: The initial state. The promise is neither fulfilled nor rejected.
+
+Fulfilled: The asynchronous operation completed successfully, and the promise is fulfilled. The associated value is available and can be accessed using the .then() method.
+
+Rejected: The asynchronous operation encountered an error or was unsuccessful, and the promise is rejected. The reason for the rejection is available and can be accessed using the .catch() method.
+
+Here's an example of creating and using a promise:
+
+const myPromise = new Promise((resolve, reject) => {
+  // Asynchronous operation
+  // If successful, call resolve(value)
+  // If unsuccessful, call reject(error)
+});
+
+myPromise
+  .then((value) => {
+    // Promise fulfilled
+    // Use the value
+  })
+  .catch((error) => {
+    // Promise rejected
+    // Handle the error
+  });
+
+_______________________________________________________________________________________________________________________
+
+💡 A.7 async and await are keywords introduced in ES2017 (ES8) to simplify the handling of asynchronous code in JavaScript. They provide a more synchronous-like syntax and make asynchronous code appear more sequential and readable.
+
+async: The async keyword is used to define an asynchronous function. An asynchronous function always returns a promise, which can be either fulfilled with a value or rejected with an error. Inside an async function, you can use the await keyword to pause the execution and wait for the resolution of a promise. This allows you to write code that appears to be synchronous, even though it is asynchronous under the hood.
+
+await: The await keyword is used inside an async function to pause the execution until a promise is fulfilled or rejected. It can only be used inside an async function. When await is used with a promise, it suspends the execution of the async function until the promise settles. If the promise is fulfilled, the await expression returns the fulfillment value. If the promise is rejected, it throws an error, which can be caught using a try/catch block.
+
+Here's an example that demonstrates the usage of async and await:
+
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function asyncFunction() {
+  console.log("Before delay");
+  await delay(2000); // Wait for 2000 milliseconds (2 seconds)
+  console.log("After delay");
+}
+
+asyncFunction();
+
+_______________________________________________________________________________________________________________________
+
+A.8 The purpose of a try and catch block in JavaScript is to handle and manage errors that occur during the execution of a program. The try block is used to enclose the code that might potentially throw an error. If an error occurs within the try block, it is caught by the corresponding catch block, allowing you to gracefully handle the error without crashing the program.
+
+Here's the basic syntax of a try and catch block:
+
+try {
+  // Code that might throw an error
+} catch (error) {
+  // Code to handle the error
+}
+
+
+The code within the try block is executed normally. If an error occurs during the execution, the program flow is immediately transferred to the catch block, and the error object is passed as an argument to the catch block. Inside the catch block, you can handle the error, log error messages, perform error recovery, or take appropriate actions based on the type of error.
+
+The try and catch block can be extended with an optional finally block, which is executed regardless of whether an error occurs or not. The finally block is often used for cleanup tasks or releasing resources that need to be done in any case.
+_______________________________________________________________________________________________________________________
+
+ A.9 fetch is a built-in web API in JavaScript that provides an easy way to make asynchronous HTTP requests to fetch resources from a network. It is a modern replacement for traditional techniques like XMLHttpRequest.
+
+The fetch function returns a promise that resolves to the response of the request. It takes a URL as its first argument and can be further customized using optional parameters and options.
+
+Here's an example of using fetch to make a simple GET request:
+
+fetch('https://api.example.com/data')
+  .then((response) => {
+    if (response.ok) {
+      return response.json();
+    } else {
+      throw new Error('Request failed');
+    }
+  })
+  .then((data) => {
+    // Use the retrieved data
+    console.log(data);
+  })
+  .catch((error) => {
+    // Handle any errors
+    console.error(error);
+  });
+
+_______________________________________________________________________________________________________________________
+
+ A.10 To define an asynchronous function in JavaScript using async/await, you need to use the async keyword before the function declaration. This indicates that the function is asynchronous and will return a promise.
+
+Here's the syntax for defining an asynchronous function:
+
+async function myAsyncFunction() {
+  // Asynchronous code using await
+}
+
+Here's an example of an asynchronous function using async/await to make an API request using fetch:
+
+async function fetchData() {
+  try {
+    const response = await fetch('https://api.example.com/data');
+    if (response.ok) {
+     const data = await response.json();
+      console.log(data);
+    } else {
+      throw new Error('Request failed');
+    }
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+By using async/await, you can write asynchronous code in a more synchronous and readable manner, avoiding nested callbacks or promise chaining.
+
+_______________________________________________________________________________________________________________________
+
+
+
